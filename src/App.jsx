@@ -755,39 +755,10 @@ const MarketingCreativeGallery = () => {
   const [activeImage, setActiveImage] = useState(0);
 
   const creatives = [
-    {
-      id: 'qr-flyer',
-      title: 'QR Code Flyer',
-      description: 'Parent\'s Choice branding: "Scan to Protect Your Growing Family"',
-      placeholder: true,
-      content: {
-        headline: 'Scan to Protect Your Growing Family',
-        subtext: 'Free Parent\'s Choice Diapers with Life Insurance Quote',
-        brand: 'Parent\'s Choice'
-      }
-    },
-    {
-      id: 'box-ad',
-      title: 'Box Advertisement',
-      description: 'Parent\'s Choice diaper box with QR code integration',
-      placeholder: true,
-      content: {
-        headline: 'Protect Your Family & Save on Diapers',
-        subtext: 'Scan QR Code for Free Boxes',
-        brand: 'Parent\'s Choice × Mutual of Omaha'
-      }
-    },
-    {
-      id: 'store-display',
-      title: 'Walmart Store Display',
-      description: 'Value messaging: "Parent\'s Choice + Mutual of Omaha: Protecting Families Together"',
-      placeholder: true,
-      content: {
-        headline: 'Protecting Families Together',
-        subtext: 'Affordable Life Insurance + Free Diapers',
-        brand: 'Parent\'s Choice × Walmart'
-      }
-    }
+    { id: 'flyer', title: 'Flyer', description: "Parent's Choice protects your baby today, Mutual of Omaha protects everything tomorrow", image: '/Walmart-Flyer.jpg' },
+    { id: 'endcap', title: 'End Cap', description: 'In-store display showing the partnership value', image: '/Walmart-EndCap.png' },
+    { id: 'donate', title: 'Donate', description: 'Buy insurance, unlock partner benefits – free diapers for your family', image: '/Walmart-donate.jpg' },
+    { id: 'social', title: 'Social Media', description: 'Digital campaign creative for social platforms', image: '/Walmart-SocialMedia.jpg' }
   ];
 
   return (
@@ -812,38 +783,17 @@ const MarketingCreativeGallery = () => {
 
       <div className="max-w-md mx-auto">
         <div className="rounded-xl overflow-hidden shadow-lg border-2" style={{ borderColor: COLORS.walmart }}>
-          {/* Placeholder mockup design */}
-          <div className="bg-gradient-to-br from-white to-gray-50 p-8 text-center">
-            <div className="mb-6">
-              <div className="inline-block px-4 py-2 rounded-lg mb-3" style={{ backgroundColor: COLORS.walmart }}>
-                <span className="text-white font-bold text-sm">{creatives[activeImage].content.brand}</span>
-              </div>
-            </div>
-
-            <h4 className="text-xl font-bold text-gray-900 mb-3">
-              {creatives[activeImage].content.headline}
-            </h4>
-
-            <p className="text-gray-600 text-sm mb-6">
-              {creatives[activeImage].content.subtext}
-            </p>
-
-            {/* Mock QR Code */}
-            <div className="w-32 h-32 mx-auto bg-white border-4 border-gray-300 rounded-lg flex items-center justify-center mb-4">
-              <div className="text-xs text-gray-400 font-mono">QR CODE</div>
-            </div>
-
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-              <Shield size={14} style={{ color: COLORS.moo }} />
-              <span>Powered by Mutual of Omaha</span>
-            </div>
-          </div>
+          <img
+            src={creatives[activeImage].image}
+            alt={creatives[activeImage].title}
+            className="w-full h-auto"
+          />
         </div>
         <p className="text-center text-gray-600 text-xs mt-2">{creatives[activeImage].description}</p>
       </div>
 
       <p className="text-center text-gray-500 text-[10px] mt-3">
-        In-store displays • Diaper box packaging • Digital integration
+        When you protect your family with insurance, you unlock partner benefits including free Parent's Choice diapers
       </p>
     </div>
   );
